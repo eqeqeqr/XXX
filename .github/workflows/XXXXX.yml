@@ -1,1 +1,27 @@
+name: Upload to GitHub Packages
 
+on:
+  push:
+    branches:
+      - main  # 设置触发条件：当代码提交到 main 分支时执行
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # 拉取代码到工作目录
+
+    - name: Set up JDK  # 配置 JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '17'
+
+    - name: Build with Maven  # 使用 Maven 构建项目
+      run: mvn clean package -DskipTests=true
+
+    - name: Publish to GitHub Packages  # 将构建产物上传到 GitHub Packages
+      run: mvn deploy -DskipTests=true --settings .github/maven-settings.xml
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
