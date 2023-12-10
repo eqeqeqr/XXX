@@ -42,7 +42,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${version.spring-boot}</version>
+                <version>3.1.5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -55,14 +55,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
-                <configuration>
+                <!--  <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <!--suppress UnresolvedMavenProperty -->
-                    <source>${version.java}</source>
-                    <!--suppress UnresolvedMavenProperty -->
+                  suppress UnresolvedMavenProperty -->
+                    <!-- <source>${version.java}</source>
+                   suppress UnresolvedMavenProperty
                     <target>${version.java}</target>
                     <showWarnings>true</showWarnings>
-                </configuration>
+                </configuration>-->
             </plugin>
         </plugins>
     </build>
