@@ -22,6 +22,7 @@ jobs:
       run: mvn clean package -DskipTests=true
 
     - name: Publish to GitHub Packages  # 将构建产物上传到 GitHub Packages
-      run: mvn deploy -DskipTests=true --settings .github/maven-settings.xml
+      run: mvn deploy -DskipTests=true --settings .github/maven-settings.xml -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true
+
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
