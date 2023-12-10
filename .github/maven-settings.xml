@@ -7,7 +7,7 @@
         <server>
             <id>github</id>
             <username>1500292505@qq.com</username>
-            <password>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</password>
+            <password>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</password>
         </server>
         <!-- 可以添加更多服务器信息 -->
     </servers>
@@ -15,18 +15,11 @@
     <!-- 配置仓库镜像 -->
     <mirrors>
         <mirror>
-            <id>central</id>
-            <mirrorOf>central</mirrorOf>
-            <url>https://repo.maven.apache.org/maven2</url>
-            <blocked>false</blocked>
-            <mirrorOfLayouts>default</mirrorOfLayouts>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </mirror>
+<id>aliyunmaven</id>
+<mirrorOf>*</mirrorOf>
+<name>阿里云公共仓库</name>
+<url>https://maven.aliyun.com/repository/public</url>
+</mirror>
         <!-- 可以添加更多镜像 -->
     </mirrors>
 
